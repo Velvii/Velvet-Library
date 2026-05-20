@@ -1,0 +1,77 @@
+*{
+    transition:cubic-bezier(0.075, 0.82, 0.165, 1) .2s;
+    background: none;
+    scrollbar-width: none;
+    font-family: main;
+}
+
+body{
+    background-color: #fffbf6;
+    animation: fade .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@font-face {
+    font-family: main;
+    src: url(../assets/fonts/J-Audio-Cassette.otf);
+}
+@font-face {
+    font-family: handwritten;
+    src: url(../assets/fonts/Quicktext.ttf);
+}
+@font-face {
+    font-family: display;
+    src: url(../assets/fonts/Rosehot.ttf);
+}
+@font-face {
+    font-family: ZTNatureBlack;
+    src: url(../assets/fonts/ZTNature-Black.otf);
+}
+@font-face {
+    font-family: ZTNatureRegular;
+    src: url(../assets/fonts/ZTNature-Regular.otf);
+}
+@font-face {
+    font-family: ZTNatureThin;
+    src: url(../assets/fonts/ZTNature-Thin.otf);
+}
+
+h1{
+    font-size: 90px;
+    font-family: ZTNatureBlack;
+    margin: 0;
+    margin-left: 10px;
+    transform: skew(-10deg);
+    color: #182518;
+    animation: fade 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+h2{
+    color: #b8b1a0;
+    font-family: handwritten;
+    margin: 0;
+    padding: 0;
+    margin-left: 30px;
+    transform: translateY(-20px);
+    animation: fade 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+hr{
+    height: 2px;
+    border-radius: 20px;
+    background-color: #182518;
+    border: none;
+    margin: 0;
+    width: 80%;
+    margin-left: 10px;
+    animation: fade 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes fade{
+    0%{
+        opacity: 0;
+        margin-left: -80px;
+    }
+    100%{
+        opacity: 1;
+    }
+}

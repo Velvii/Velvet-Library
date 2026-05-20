@@ -1,0 +1,45 @@
+.header{
+    background-color: #162316;
+    display: flex;
+    width: 100%;
+    margin: none;
+    position: fixed;
+    left: 0;
+    padding: 10px;
+    justify-content: space-evenly;
+}
+
+.header button{
+    width: auto;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: center;
+    border: none;
+    margin: 0;
+    padding: 0;
+    gap: 5px;
+}
+
+.header button img{
+    width: 25px;
+    height: auto;
+    filter: invert();
+}
+
+.header button p{
+    font-family: main;
+    color: white;
+    font-size: 20px;
+    transform: translateY(2px);
+}
+
+p{
+    font-family: main;
+    font-size: 50px;
+}
+
+.header button:hover{
+    scale: 1.1;
+}

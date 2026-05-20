@@ -1,0 +1,262 @@
+@font-face {
+    font-family: main;
+    src: url(../assets/fonts/J-Audio-Cassette.otf);
+}
+@font-face {
+    font-family: handwritten;
+    src: url(../assets/fonts/Quicktext.ttf);
+}
+@font-face {
+    font-family: display;
+    src: url(../assets/fonts/Rosehot.ttf);
+}
+@font-face {
+    font-family: ZTNatureBlack;
+    src: url(../assets/fonts/ZTNature-Black.otf);
+}
+@font-face {
+    font-family: ZTNatureRegular;
+    src: url(../assets/fonts/ZTNature-Regular.otf);
+}
+@font-face {
+    font-family: ZTNatureThin;
+    src: url(../assets/fonts/ZTNature-Thin.otf);
+}
+h3{
+    color: #b8b1a0;
+    font-size: 40px;
+    font-family: main;
+}
+
+.bookDiv{
+    width: 99%;
+    border: #b8b1a0 2px solid;
+    border-radius: 10px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    overflow: auto;
+    scrollbar-width: none;
+    padding-left: 40px;
+}
+
+.book{
+    width: 178px;
+    height: 220px;
+    background-color: #685e50;
+    border-radius: 10px;
+    border-right: 4px solid rgba(0, 0, 0, 0.412);
+    will-change: transform;
+    transition: .2s cubic-bezier(.22,.9,.35,1);
+    transform-origin: center;
+    margin: 10px;
+}
+
+
+.book.crime{
+    background-color: #4c2a65;
+}
+
+.book.crime #cover{
+    background-color: #4c2a65;
+    border-right-color: #251432;
+}
+
+.book.romance{
+    background-color: #9f579a;
+}
+
+.book.romance #cover{
+    background-color: #9f579a;
+    border-right-color: #4e284c;
+}
+
+.book.fantasy{
+    background-color: #328fba;
+}
+
+.book.fantasy #cover{
+    background-color: #328fba;
+    border-right-color: #2b7496;
+}   
+
+#pages{
+    width: 160px;
+    height: 200px;
+    background-color: white;
+    margin-left: 6px;
+    margin-right: 5px;
+    border-radius: 2px;
+    margin-top: 10px;
+    border-right: 8px solid rgba(111, 152, 255, 0.226);
+}
+
+#cover{
+    width: 160px;
+    height: 220px;
+    background-color: #41392d;
+    margin-left: 0px;
+    border-radius: 10px;
+    margin-top: -210px;
+    border-right-style: solid;
+    border-right-color: #221d17;
+    border-right-width: 3px;
+}
+
+.book:hover #cover{
+    transform: scaleX(.8)translate(-20px, -13px)skewY(-10deg);
+    transition-duration: .8s;
+    border-right-width: 6px;
+}
+
+.book:active{
+    scale: .95;
+}
+
+
+
+.book:hover{
+    transform: translate(-5px, -5px);
+    transition-duration: .8s;
+    border-right: 6px solid rgba(0, 0, 0, 0.412);
+    filter: drop-shadow(3px 3px #000000)drop-shadow(-3px 3px #000000)drop-shadow(3px -3px #000000)drop-shadow(-3px -3px #000000);
+    transition-duration: .4s;
+    z-index: 2;
+}
+
+
+
+#cover h1{
+    font-size: 18px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.377);
+    font-family: ZTNatureRegular;
+    transform: translateY(40px);
+    animation: none;
+}
+
+.bookDiv.fin{
+    background-color: #b8b1a0;
+}
+
+/* Additional genre styles generated from javascript/library.js */
+.book.sciFi{
+    background-color: #38968f;
+}
+.book.sciFi #cover{
+    background-color: #38968f;
+    border-right-color: #225a55;
+}
+
+.book.adventure{
+    background-color: #657f4b;
+}
+.book.adventure #cover{
+    background-color: #657f4b;
+    border-right-color: #3c4c2d;
+}
+
+.book.mystery{
+    background-color: #26232f;
+}
+.book.mystery #cover{
+    background-color: #26232f;
+    border-right-color: #17151c;
+}
+
+.book.horror{
+    background-color: #3a1d11;
+}
+.book.horror #cover{
+    background-color: #3a1d11;
+    border-right-color: #23110a;
+}
+
+.book.comedy{
+    background-color: #cb8b2c;
+}
+.book.comedy #cover{
+    background-color: #cb8b2c;
+    border-right-color: #79531a;
+}
+
+.book.literary-prose{
+    background-color: #1b694d;
+}
+.book.literary-prose #cover{
+    background-color: #1b694d;
+    border-right-color: #103f2e;
+}
+
+.book.poetry{
+    background-color: #513347;
+}
+.book.poetry #cover{
+    background-color: #513347;
+    border-right-color: #301e2a;
+}
+
+.book.drama{
+    background-color: #711818;
+}
+.book.drama #cover{
+    background-color: #711818;
+    border-right-color: #430e0e;
+}
+
+.book.historical{
+    background-color: #584533;
+}
+.book.historical #cover{
+    background-color: #584533;
+    border-right-color: #34291e;
+}
+
+.book.children{
+    background-color: #efe872;
+}
+.book.children #cover{
+    background-color: #efe872;
+    border-right-color: #8f8b44;
+}
+
+.book.philosophical{
+    background-color: #abe44f;
+}
+.book.philosophical #cover{
+    background-color: #abe44f;
+    border-right-color: #66882f;
+}
+
+.book.religious{
+    background-color: #cf4699;
+}
+.book.religious #cover{
+    background-color: #cf4699;
+    border-right-color: #7c2a5b;
+}
+
+.book.graphic-novel{
+    background-color: #ad1b5d;
+}
+.book.graphic-novel #cover{
+    background-color: #ad1b5d;
+    border-right-color: #671037;
+}
+
+#cover h2{
+    font-family: main;
+    font-size: 10px;
+    text-align: center;
+    transform: translateY(50px)translateX(-10px);
+    color: rgba(255, 255, 255, 0.241);
+}
+
+.bookIcon {
+    position: fixed;
+    bottom: 20px;
+    width: auto;
+    height: 50px;
+    transform: translateX(60px);
+    opacity: .2;
+}

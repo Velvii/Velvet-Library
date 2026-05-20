@@ -1,0 +1,37 @@
+.toggle{
+    background-color: #364636;
+    display: flex;
+    width: 98%;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    border-radius: 10px;
+    animation: fade 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform:skew(-5deg);
+    box-shadow: 1px 1px #1c241c, 2px 2px #1c241c, 3px 3px #1c241c, 4px 4px #1c241c, 5px 5px #1c241c;
+    margin-top: 15px;
+    transition-duration: .5s;
+}
+
+.toggle:hover{
+    transform: skew(0deg)translateY(5px);
+    box-shadow: 1px -1px #1c241c, 2px -2px #1c241c, 3px -3px #1c241c, 4px -4px #1c241c, 5px -5px #1c241c;
+}
+
+
+.toggle p{
+    font-size: 30px;
+    margin: 20px;
+    color: #ede4d0;
+    font-family: ZTNatureRegular;
+    animation: fade 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.toggle input[type="checkbox"]{
+    margin: 20px;
+    scale: 2.8;
+    border: none;
+    animation: fade 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    color: black;
+}
