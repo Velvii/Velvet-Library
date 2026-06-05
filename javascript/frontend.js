@@ -1,5 +1,7 @@
 import {books} from "./library.js"
 import {createBook} from "./library.js"
+
+const siteRoot = window.location.pathname.includes("/html/pages/") ? "../../" : "./";
 document.addEventListener('DOMContentLoaded', () => {
   const containers = document.querySelectorAll('.bookDiv');
   if (!containers.length) {
@@ -44,7 +46,7 @@ function refreshBooks(){
   const cover = $("<div id='cover'></div>").appendTo(back);
   const title = $("<h1>"+book.title+"</h1>").appendTo(cover);
   const author = $("<h2>"+book.author+"</h2>").appendTo(cover);
-  const icon = $("<img class='bookIcon' src='../../assets/book-icons/"+book.iconName+".svg' alt='book icon' />").appendTo(cover);
+  const icon = $("<img class='bookIcon' src='"+siteRoot+"assets/book-icons/"+book.iconName+".svg' alt='book icon' />").appendTo(cover);
   back.on("click", function(){
     if (book.finished){
       document.getElementById("completeStamp").style.visibility = "visible"

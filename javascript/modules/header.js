@@ -1,12 +1,24 @@
+const siteRoot = window.location.pathname.includes("/html/pages/") ? "../../" : "./";
+
 function createHeader(){
     let el = document.createElement("div");
     el.classList.add("header");
     $("body").append(el);
-    $('.header').load("/html/modules/header.html");
+    $('.header').load(`${siteRoot}html/modules/header.html`, () => {
+        document.querySelectorAll(".header button[data-target]").forEach((button) => {
+            button.onclick = () => {
+                window.location.href = siteRoot + button.dataset.target;
+            };
+        });
+
+        document.querySelectorAll(".header img[data-icon]").forEach((image) => {
+            image.src = `${siteRoot}assets/header-icons/${image.dataset.icon}`;
+        });
+    });
     $('<link/>', {
         rel: 'stylesheet',
         type: 'text/css',
-        href: '/css/modules/header.css'
+        href: `${siteRoot}css/modules/header.css`
     }).appendTo('head');
 }
 
