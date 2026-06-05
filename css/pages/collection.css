@@ -675,6 +675,8 @@ h3{
     margin: none;
     background-color: #103f2e7c;
     backdrop-filter: blur(10px);
+    opacity: 0;
+    pointer-events: none;
 }
 
 #newBookDivInner{
