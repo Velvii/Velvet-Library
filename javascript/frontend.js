@@ -32,6 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 function refreshBooks(){
+  $(".bookDiv.curr").empty();
+  $(".bookDiv.fin").empty();
   books.forEach(book => {
   let status;
   if (book.finished == true){
@@ -75,6 +77,8 @@ function refreshBooks(){
         document.getElementById("completeStamp").style.animation = "none"
         document.getElementById("completeStamp").offsetHeight
         document.getElementById("completeStamp").style.animation = "completeStamp cubic-bezier(0.075, 0.82, 0.165, 1) .4s"
+        book.finished = true;
+        refreshBooks()
       }
       document.getElementById("pageCount").textContent = book.curPages+"/"+book.totalPages+" PAGES"
       document.getElementById("logPagesInput").value = "";
