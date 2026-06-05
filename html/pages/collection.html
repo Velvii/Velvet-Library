@@ -12,10 +12,178 @@
         <h2>Manage Your Library</h2>
         <hr>
         <h3>Currently Reading</h3>
+        <button id="newBookButton">+ Add new Book</button>
         <div class="bookDiv curr">
         </div>
         <h3>Finished</h3>
         <div class="bookDiv fin">
+        </div>
+        <div class="bookSelect">
+            <img id="a" src="../../assets/decoration-icons/flower.png">
+            <img id="b" src="../../assets/decoration-icons/hash.png">
+            <h1 id="bookTitle">Book Title</h1>
+            <button id="closeButton">Close</button>
+            <h4 id="backgroundDate">2026</h4>
+            <h4 id="backgroundTitle">Title</h4>
+            <div class="bookSelectInner">
+                <img id="completeStamp" src="../../assets/library/complete-stamp.png">
+                <img id="editButton" src="../../assets/library/13.png">
+                <img id="pageCountBackground" src="../../assets/library/15.png">
+                <h4 id="pageCount">9999/9999 Pages</h4>
+                <h4 id="startRead">Started Reading on 6/1/2026</h4>
+                <h4 id="lastRead">Last Read on 6/3/2026</h4>
+                <h4 id="publishDate">Published In 2021</h4>
+                <h4 id="genre">Horror</h4>
+                <img id="logPagesButton" src="../../assets/library/14.png">
+            </div>
+            <div id="logPagesDiv">
+                <div>
+                    <h6>Current Page:</h6>
+                    <input id="logPagesInput">
+                    <button id="logPagesSubmitBut">Submit</button>
+                </div>
+            </div>
+        </div>
+        <div id="newBookDiv">
+            <div id="newBookDivInner">
+                <div class="form-row">
+                    <label for="title">Title:</label>
+                    <input
+                    name="title"
+                    type="text"
+                    id="newBookTitle"
+                    required
+                    minlength="1"
+                    maxlength="100"
+                    size="20"/>
+                </div>
+                
+                <div class="form-row">
+                    <label for="author">Author:</label>
+                    <input
+                    name="author"
+                    type="text"
+                    id="newBookAuthor"
+                    required
+                    minlength="1"
+                    maxlength="100"
+                    size="20"/>
+                </div>
+
+                <div class="form-row">
+                    <label for="genre">Genre:</label>
+                    <select id="newBookGenre" name="genre">
+                        <option value="crime">Crime</option>
+                        <option value="romance">Romance</option>
+                        <option value="fantasy">Fantasy</option>
+                        <option value="scifi">Scifi</option>
+                        <option value="adventure">Adventure</option>
+                        <option value="mystery">Mystery</option>
+                        <option value="horror">Horror</option>
+                        <option value="comedy">Comedy</option>
+                        <option value="literary-prose">Literary-Prose</option>
+                        <option value="poetry">Poetry</option>
+                        <option value="drama">Drama</option>
+                        <option value="historical">Historical</option>
+                        <option value="children">Children</option>
+                        <option value="philosophical">Philosophical</option>
+                        <option value="religious">Religious</option>
+                        <option value="graphic-novel">Graphic-Novel</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="icon">Icon:</label>
+                    <select id="newBookIcon" name="icon">
+                        <option value="alarm">alarm</option>
+                        <option value="attachment">attachment</option>
+                        <option value="awards">awards</option>
+                        <option value="band-aid">band-aid</option>
+                        <option value="battery-full">battery-full</option>
+                        <option value="bee">bee</option>
+                        <option value="bell">bell</option>
+                        <option value="bookmark">bookmark</option>
+                        <option value="bot">bot</option>
+                        <option value="bowl">bowl</option>
+                        <option value="box">box</option>
+                        <option value="boy">boy</option>
+                        <option value="briefcase">briefcase</option>
+                        <option value="browser">browser</option>
+                        <option value="brush">brush</option>
+                        <option value="bulb">bulb</option>
+                        <option value="calendar-due">calendar-due</option>
+                        <option value="camera">camera</option>
+                        <option value="cloud">cloud</option>
+                        <option value="coffee">coffee</option>
+                        <option value="color-bucket">color-bucket</option>
+                        <option value="copyright">copyright</option>
+                        <option value="crowdfire">crowdfire</option>
+                        <option value="crown">crown</option>
+                        <option value="debug">debug</option>
+                        <option value="dice-5">dice-5</option>
+                        <option value="disc">disc</option>
+                        <option value="drop">drop</option>
+                        <option value="eye">eye</option>
+                        <option value="games">games</option>
+                        <option value="gender-female">gender-female</option>
+                        <option value="gender-male">gender-male</option>
+                        <option value="ghost-character">ghost-character</option>
+                        <option value="gift">gift</option>
+                        <option value="girl">girl</option>
+                        <option value="glass">glass</option>
+                        <option value="gym">gym</option>
+                        <option value="headset">headset</option>
+                        <option value="heart">heart</option>
+                        <option value="icecream">icecream</option>
+                        <option value="instagram">instagram</option>
+                        <option value="live-photo">live-photo</option>
+                        <option value="lock">lock</option>
+                        <option value="mic">mic</option>
+                        <option value="music-note">music-note</option>
+                        <option value="piano">piano</option>
+                        <option value="pill">pill</option>
+                        <option value="plug">plug</option>
+                        <option value="read">read</option>
+                        <option value="smartphone-chip">smartphone-chip</option>
+                        <option value="smile-mouth-open">smile-mouth-open</option>
+                        <option value="smile-neutral">smile-neutral</option>
+                        <option value="smile-no-mouth">smile-no-mouth</option>
+                        <option value="smile-none">smile-none</option>
+                        <option value="smile-sad">smile-sad</option>
+                        <option value="smile-upside">smile-upside</option>
+                        <option value="smile">smile</option>
+                        <option value="swiss">swiss</option>
+                        <option value="tennis">tennis</option>
+                        <option value="terrain">terrain</option>
+                        <option value="toolbox">toolbox</option>
+                        <option value="trash">trash</option>
+                        <option value="trees">trees</option>
+                        <option value="umbrella">umbrella</option>
+                        <option value="yinyang">yinyang</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="date">Date:</label>
+                    <input
+                    name="date"
+                    type="text"
+                    id="newBookDate"
+                    required
+                    size="20"/>
+                </div>
+
+                <div class="form-row">
+                    <label for="pages">Pages:</label>
+                    <input
+                    name="pages"
+                    type="number"
+                    id="newBookPages"
+                    required
+                    size="4"/>
+                </div>
+                <button id="createNewBookConfirm">Create</button>
+            </div>
         </div>
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

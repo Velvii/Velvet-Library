@@ -1,5 +1,5 @@
 import {books} from "./library.js"
-
+import {createBook} from "./library.js"
 document.addEventListener('DOMContentLoaded', () => {
   const containers = document.querySelectorAll('.bookDiv');
   if (!containers.length) {
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // velocity smoothing
       velocity = velocity * .8 + delta * 0.4;
       // convert to degrees and clamp
-      const skew = Math.max(-12, Math.min(12, velocity));
+      const skew = Math.max(-15, Math.min(15, velocity));
       children.forEach(el => el.style.transform = `skew(${skew}deg)`);
       requestAnimationFrame(loop);
     }
@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(loop);
   });
 });
-
-books.forEach(book => {
+function refreshBooks(){
+  books.forEach(book => {
   let status;
   if (book.finished == true){
     status = "fin"
@@ -45,4 +45,70 @@ books.forEach(book => {
   const title = $("<h1>"+book.title+"</h1>").appendTo(cover);
   const author = $("<h2>"+book.author+"</h2>").appendTo(cover);
   const icon = $("<img class='bookIcon' src='../../assets/book-icons/"+book.iconName+".svg' alt='book icon' />").appendTo(cover);
-})
+  back.on("click", function(){
+    if (book.finished){
+      document.getElementById("completeStamp").style.visibility = "visible"
+      document.getElementById("completeStamp").style.animation = "none"
+      document.getElementById("completeStamp").offsetHeight
+      document.getElementById("completeStamp").style.animation = "completeStamp cubic-bezier(0.075, 0.82, 0.165, 1) .4s"
+    }
+    document.getElementsByClassName("bookSelect")[0].style.opacity = "1"
+    document.getElementsByClassName("bookSelect")[0].style.pointerEvents = "all"
+    document.getElementById("bookTitle").textContent = book.title
+    document.getElementById("backgroundTitle").textContent = book.title;
+    document.getElementById("pageCount").textContent = book.curPages+"/"+book.totalPages+" PAGES"
+    document.getElementById("startRead").textContent = book.startDate;
+    document.getElementById("lastRead").textContent = book.lastDate;
+    document.getElementById("publishDate").textContent = book.publishingDate;
+    document.getElementById("backgroundDate").textContent = book.publishingDate;
+    document.getElementById("logPagesSubmitBut").onclick = function(){
+      document.getElementById("logPagesDiv").style.opacity = "0";
+      document.getElementById("logPagesDiv").style.pointerEvents = "none";
+      book.curPages = document.getElementById("logPagesInput").value;
+      if (book.curPages > book.totalPages){
+        book.curPages = book.totalPages
+      }
+      if (book.curPages == book.totalPages){
+        document.getElementById("completeStamp").style.visibility = "visible"
+        document.getElementById("completeStamp").style.animation = "none"
+        document.getElementById("completeStamp").offsetHeight
+        document.getElementById("completeStamp").style.animation = "completeStamp cubic-bezier(0.075, 0.82, 0.165, 1) .4s"
+      }
+      document.getElementById("pageCount").textContent = book.curPages+"/"+book.totalPages+" PAGES"
+      document.getElementById("logPagesInput").value = "";
+    }
+  })
+  })
+
+  document.getElementById("closeButton").onclick = function(){
+  document.getElementsByClassName("bookSelect")[0].style.opacity = "0"
+  document.getElementsByClassName("bookSelect")[0].style.pointerEvents = "none"
+  document.getElementById("completeStamp").style.visibility = "hidden"
+  }
+
+  document.getElementById("logPagesButton").onclick = function(){
+  document.getElementById("logPagesDiv").style.opacity = "1"
+  document.getElementById("logPagesDiv").style.pointerEvents = "all"
+  }
+}
+
+refreshBooks()
+
+document.getElementById("createNewBookConfirm").onclick = function(){
+  let newBookTitle = document.getElementById('newBookTitle').value
+  let newBookAuthor = document.getElementById('newBookAuthor').value
+  let newBookGenre = document.getElementById('newBookGenre').value
+  let newBookIcon = document.getElementById('newBookIcon').value
+  let newBookPublishDate = document.getElementById('newBookDate').value
+  let newBookPages = document.getElementById('newBookPages').value
+
+  createBook(newBookTitle,newBookAuthor,newBookGenre,newBookIcon,newBookPublishDate,false,newBookPages)
+  refreshBooks()
+  document.getElementById("newBookDiv").style.opacity = "0"
+  document.getElementById("newBookDiv").style.pointerEvents = "none"
+}
+
+document.getElementById("newBookButton").onclick = function(){
+  document.getElementById("newBookDiv").style.opacity = "1"
+  document.getElementById("newBookDiv").style.pointerEvents = "all"
+}
